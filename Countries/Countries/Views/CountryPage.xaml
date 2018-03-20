@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:i18n="clr-namespace:Countries.Helpers"
+    x:Class="Countries.Views.CountryPage"
+    Title="{i18n:Translate Information}"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    BackgroundColor="{StaticResource colorBackground}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ffimageloadingsvg:SvgImageSourceConverter 
+                x:Key="SvgImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness"
+            iOS="20,30,20,10"
+            Android="8"/>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Land}">
+            <StackLayout>
+                <Label
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="{Binding Land.Name}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <ffimageloading:CachedImage 
+                    Source="{Binding Land.Flag, Converter={StaticResource SvgImageSourceConverter}}">
+                </ffimageloading:CachedImage>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Text="{i18n:Translate Capital}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Capital}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Text="{i18n:Translate Population}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Population, StringFormat='{0:N0}'}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Text="{i18n:Translate Area}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Area, StringFormat='{0:N0}'}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        Text="{i18n:Translate AlphaCode2}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Alpha2Code}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        Text="{i18n:Translate AlphaCode3}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Alpha3Code}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="5"
+                        Text="{i18n:Translate Region}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="5"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Region}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="6"
+                        Text="{i18n:Translate Subregion}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="6"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Subregion}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="7"
+                        Text="{i18n:Translate Demonym}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="7"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Demonym}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="8"
+                        Text="{i18n:Translate GINI}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="8"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Gini, StringFormat='{0:N2}'}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="9"
+                        Text="{i18n:Translate NativeName}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="9"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.NativeName}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="10"
+                        Text="{i18n:Translate NumericCode}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="10"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.NumericCode}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="11"
+                        Text="{i18n:Translate CIOC}"
+                        TextColor="{StaticResource colorPrimaryText}">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="11"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Cioc}"
+                        TextColor="{StaticResource colorSecondaryText}">
+                    </Label>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

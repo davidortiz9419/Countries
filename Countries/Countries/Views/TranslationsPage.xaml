@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:Countries.Helpers"
+    x:Class="Countries.Views.TranslationsPage"
+    Title="{i18n:Translate Translations}"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    BackgroundColor="{StaticResource colorBackground}">
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness"
+            iOS="20,30,20,10"
+            Android="8"/>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Land}">
+            <Label
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="{Binding Land.Name}"
+                TextColor="{StaticResource colorPrimaryText}">
+            </Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="{i18n:Translate German}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Translations.German}"
+                    TextColor="{StaticResource colorSecondaryText}">
+                </Label>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="{i18n:Translate Spanish}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Translations.Spanish}"
+                    TextColor="{StaticResource colorSecondaryText}">
+                </Label>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Text="{i18n:Translate French}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Translations.French}"
+                    TextColor="{StaticResource colorSecondaryText}">
+                </Label>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Text="{i18n:Translate Japanese}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Translations.Japanese}"
+                    TextColor="{StaticResource colorSecondaryText}">
+                </Label>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Text="{i18n:Translate Italian}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Translations.Italian}"
+                    TextColor="{StaticResource colorSecondaryText}">
+                </Label>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    Text="{i18n:Translate Brazilian}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="5"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Translations.Brazilian}"
+                    TextColor="{StaticResource colorSecondaryText}">
+                </Label>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="6"
+                    Text="{i18n:Translate Portuguese}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="6"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Translations.Portuguese}"
+                    TextColor="{StaticResource colorSecondaryText}">
+                </Label>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="7"
+                    Text="{i18n:Translate Dutch}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="7"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Translations.Dutch}"
+                    TextColor="{StaticResource colorSecondaryText}">
+                </Label>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="8"
+                    Text="{i18n:Translate Croatian}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="8"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Translations.Croatian}"
+                    TextColor="{StaticResource colorSecondaryText}">
+                </Label>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="9"
+                    Text="{Binding Land.Translations.Persian}"
+                    TextColor="{StaticResource colorPrimaryText}">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="9"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Translations.Persian}"
+                    TextColor="{StaticResource colorSecondaryText}">
+                </Label>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -3,6 +3,7 @@
     using Android.App;
     using Android.Content.PM;
     using Android.OS;
+    using FFImageLoading.Forms.Droid;
 
     [Activity(
         Label = "Countries", 
@@ -20,6 +21,7 @@
             base.OnCreate(bundle);
 
             Xamarin.Forms.Forms.Init(this, bundle);
+            CachedImageRenderer.Init(true);
             LoadApplication(new App());
         }
     }
