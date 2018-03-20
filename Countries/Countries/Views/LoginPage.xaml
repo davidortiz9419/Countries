@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Countries.Controls;assembly:Countries"
+    xmlns:i18n="clr-namespace:Countries.Helpers"
+    x:Class="Countries.Views.LoginPage"
+    Title="{i18n:Translate LoginTitle}"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    BackgroundColor="{StaticResource colorBackground}">
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness"
+            iOS="20,30,20,10"
+            Android="8"/>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Login}">
+            <StackLayout>
+                <Image
+                    Source="travel_night"
+                    WidthRequest="180">
+                </Image>
+                <Grid
+                    Margin="10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <controls:MaterialEntry
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        Keyboard="Email"
+                        Placeholder="{i18n:Translate Email}"
+                        Text="{Binding Email, Mode=TwoWay}">
+                    </controls:MaterialEntry>
+                    <controls:MaterialEntry
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        IsPassword="True"
+                        Placeholder="{i18n:Translate Password}"
+                        Text="{Binding Password, Mode=TwoWay}">
+                    </controls:MaterialEntry>
+                </Grid>
+                <StackLayout
+                    Margin="10,0"
+                    Orientation="Horizontal">
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                        Text="{i18n:Translate Rememberme}"
+                        TextColor="{StaticResource colorPrimaryText}"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Switch
+                        HorizontalOptions="End"
+                        IsToggled="{Binding IsToggled, Mode=TwoWay}">
+                    </Switch>
+                </StackLayout>
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{i18n:Translate Forgot}"
+                    TextColor="#2196F3">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding PasswordRecoveryCommand}">
+                        </TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}">
+                </ActivityIndicator>
+                <StackLayout
+                    Margin="10,0">
+                    <Button
+                        BackgroundColor="{StaticResource colorPrimaryDark}"
+                        BorderRadius="23"
+                        Command="{Binding LoginCommand}"
+                        FontAttributes="Bold"
+                        HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="{i18n:Translate Login}"
+                        TextColor="{StaticResource colorTextIcons}">
+                    </Button>
+                    <Button
+                        BackgroundColor="{StaticResource colorAccent}"
+                        BorderRadius="23"
+                        Command="{Binding RegisterCommand}"
+                        FontAttributes="Bold"
+                        HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="{i18n:Translate Register}"
+                        TextColor="{StaticResource colorTextIcons}">
+                    </Button>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    VerticalOptions="EndAndExpand">
+                    <Image
+                        Source="facebook"
+                        WidthRequest="45">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding LoginFacebookCommand}">
+                            </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image
+                        Source="twitter"
+                        WidthRequest="45">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding LoginTwitterCommand}">
+                            </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image
+                        Source="instagram"
+                        WidthRequest="45">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding LoginInstagramCommand}">
+                            </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
