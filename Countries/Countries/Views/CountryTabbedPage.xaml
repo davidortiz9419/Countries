@@ -7,10 +7,10 @@
     x:Class="Countries.Views.CountryTabbedPage"
     Title="{i18n:Translate Country}">
     <TabbedPage.Children>
-        <tabs:CountryPage/>
-        <tabs:BordersPage/>
-        <tabs:CurrenciesPage/>
-        <tabs:TranslationsPage/>
-        <tabs:LanguagesPage/>
+        <tabs:CountryPage HeightRequest="0"/>
+        <tabs:BordersPage HeightRequest="0"/>
+        <tabs:CurrenciesPage HeightRequest="0"/>
+        <tabs:LanguagesPage HeightRequest="0"/>
+        <tabs:TranslationsPage HeightRequest="0"/>
     </TabbedPage.Children>
 </TabbedPage>

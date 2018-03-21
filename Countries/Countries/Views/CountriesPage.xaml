@@ -24,7 +24,7 @@
     </ContentPage.Padding>
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding Lands}">
+            BindingContext="{Binding Countries}">
             <SearchBar
                 BackgroundColor="{StaticResource colorBackground}"
                 HeightRequest="46"
@@ -38,7 +38,7 @@
                 HasUnevenRows="True"
                 IsPullToRefreshEnabled="True"
                 IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
-                ItemsSource="{Binding Lands}"
+                ItemsSource="{Binding Countries}"
                 RefreshCommand="{Binding RefreshCommand}"
                 SeparatorVisibility="None">
                 <ListView.ItemTemplate>

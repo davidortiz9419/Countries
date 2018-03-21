@@ -15,12 +15,12 @@
     </ContentPage.Padding>
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding Land}">
+            BindingContext="{Binding Country}">
             <Label
                 FontSize="Large"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
-                Text="{Binding Land.Name}"
+                Text="{Binding Country.Name}"
                 TextColor="{StaticResource colorPrimaryText}">
             </Label>
             <Grid>
@@ -38,7 +38,7 @@
                     Grid.Column="1"
                     Grid.Row="0"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Translations.German}"
+                    Text="{Binding Country.Translations.German}"
                     TextColor="{StaticResource colorSecondaryText}">
                 </Label>
                 <Label
@@ -51,7 +51,7 @@
                     Grid.Column="1"
                     Grid.Row="1"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Translations.Spanish}"
+                    Text="{Binding Country.Translations.Spanish}"
                     TextColor="{StaticResource colorSecondaryText}">
                 </Label>
                 <Label
@@ -64,7 +64,7 @@
                     Grid.Column="1"
                     Grid.Row="2"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Translations.French}"
+                    Text="{Binding Country.Translations.French}"
                     TextColor="{StaticResource colorSecondaryText}">
                 </Label>
                 <Label
@@ -77,7 +77,7 @@
                     Grid.Column="1"
                     Grid.Row="3"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Translations.Japanese}"
+                    Text="{Binding Country.Translations.Japanese}"
                     TextColor="{StaticResource colorSecondaryText}">
                 </Label>
                 <Label
@@ -90,7 +90,7 @@
                     Grid.Column="1"
                     Grid.Row="4"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Translations.Italian}"
+                    Text="{Binding Country.Translations.Italian}"
                     TextColor="{StaticResource colorSecondaryText}">
                 </Label>
                 <Label
@@ -103,7 +103,7 @@
                     Grid.Column="1"
                     Grid.Row="5"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Translations.Brazilian}"
+                    Text="{Binding Country.Translations.Brazilian}"
                     TextColor="{StaticResource colorSecondaryText}">
                 </Label>
                 <Label
@@ -116,7 +116,7 @@
                     Grid.Column="1"
                     Grid.Row="6"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Translations.Portuguese}"
+                    Text="{Binding Country.Translations.Portuguese}"
                     TextColor="{StaticResource colorSecondaryText}">
                 </Label>
                 <Label
@@ -129,7 +129,7 @@
                     Grid.Column="1"
                     Grid.Row="7"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Translations.Dutch}"
+                    Text="{Binding Country.Translations.Dutch}"
                     TextColor="{StaticResource colorSecondaryText}">
                 </Label>
                 <Label
@@ -142,20 +142,20 @@
                     Grid.Column="1"
                     Grid.Row="8"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Translations.Croatian}"
+                    Text="{Binding Country.Translations.Croatian}"
                     TextColor="{StaticResource colorSecondaryText}">
                 </Label>
                 <Label
                     Grid.Column="0"
                     Grid.Row="9"
-                    Text="{Binding Land.Translations.Persian}"
+                    Text="{i18n:Translate Persian}"
                     TextColor="{StaticResource colorPrimaryText}">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="9"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Translations.Persian}"
+                    Text="{Binding Country.Translations.Persian}"
                     TextColor="{StaticResource colorSecondaryText}">
                 </Label>
             </Grid>

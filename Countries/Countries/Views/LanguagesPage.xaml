@@ -15,12 +15,12 @@
     </ContentPage.Padding>
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding Land}">
+            BindingContext="{Binding Country}">
             <Label
                 FontSize="Large"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
-                Text="{Binding Land.Name}"
+                Text="{Binding Country.Name}"
                 TextColor="{StaticResource colorPrimaryText}">
             </Label>
             <ListView

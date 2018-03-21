@@ -199,10 +199,10 @@
     <value>CIOC:</value>
   </data>
   <data name="Borders" xml:space="preserve">
-    <value>Bordures:</value>
+    <value>Bordures</value>
   </data>
   <data name="Currencies" xml:space="preserve">
-    <value>Devises:</value>
+    <value>Devises</value>
   </data>
   <data name="German" xml:space="preserve">
     <value>Allemand:</value>

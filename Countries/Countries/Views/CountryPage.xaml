@@ -24,17 +24,17 @@
     </ContentPage.Padding>
     <ContentPage.Content>
         <ScrollView
-            BindingContext="{Binding Land}">
+            BindingContext="{Binding Country}">
             <StackLayout>
                 <Label
                     FontSize="Large"
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
-                    Text="{Binding Land.Name}"
+                    Text="{Binding Country.Name}"
                     TextColor="{StaticResource colorPrimaryText}">
                 </Label>
                 <ffimageloading:CachedImage 
-                    Source="{Binding Land.Flag, Converter={StaticResource SvgImageSourceConverter}}">
+                    Source="{Binding Country.Flag, Converter={StaticResource SvgImageSourceConverter}}">
                 </ffimageloading:CachedImage>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -51,7 +51,7 @@
                         Grid.Column="1"
                         Grid.Row="0"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Capital}"
+                        Text="{Binding Country.Capital}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -64,7 +64,7 @@
                         Grid.Column="1"
                         Grid.Row="1"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Population, StringFormat='{0:N0}'}"
+                        Text="{Binding Country.Population, StringFormat='{0:N0}'}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -77,7 +77,7 @@
                         Grid.Column="1"
                         Grid.Row="2"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Area, StringFormat='{0:N0}'}"
+                        Text="{Binding Country.Area, StringFormat='{0:N0}'}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -90,7 +90,7 @@
                         Grid.Column="1"
                         Grid.Row="3"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Alpha2Code}"
+                        Text="{Binding Country.Alpha2Code}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -103,7 +103,7 @@
                         Grid.Column="1"
                         Grid.Row="4"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Alpha3Code}"
+                        Text="{Binding Country.Alpha3Code}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -116,7 +116,7 @@
                         Grid.Column="1"
                         Grid.Row="5"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Region}"
+                        Text="{Binding Country.Region}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -129,7 +129,7 @@
                         Grid.Column="1"
                         Grid.Row="6"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Subregion}"
+                        Text="{Binding Country.Subregion}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -142,7 +142,7 @@
                         Grid.Column="1"
                         Grid.Row="7"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Demonym}"
+                        Text="{Binding Country.Demonym}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -155,7 +155,7 @@
                         Grid.Column="1"
                         Grid.Row="8"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Gini, StringFormat='{0:N2}'}"
+                        Text="{Binding Country.Gini, StringFormat='{0:N2}'}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -168,7 +168,7 @@
                         Grid.Column="1"
                         Grid.Row="9"
                         FontAttributes="Bold"
-                        Text="{Binding Land.NativeName}"
+                        Text="{Binding Country.NativeName}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -181,7 +181,7 @@
                         Grid.Column="1"
                         Grid.Row="10"
                         FontAttributes="Bold"
-                        Text="{Binding Land.NumericCode}"
+                        Text="{Binding Country.NumericCode}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                     <Label
@@ -194,7 +194,7 @@
                         Grid.Column="1"
                         Grid.Row="11"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Cioc}"
+                        Text="{Binding Country.Cioc}"
                         TextColor="{StaticResource colorSecondaryText}">
                     </Label>
                 </Grid>

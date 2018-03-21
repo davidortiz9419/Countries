@@ -232,7 +232,7 @@ namespace Countries.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Currencies:.
+        ///   Looks up a localized string similar to Currencies.
         /// </summary>
         public static string Currencies {
             get {
