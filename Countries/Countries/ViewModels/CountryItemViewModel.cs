@@ -9,12 +9,12 @@
     public class CountryItemViewModel : Country
     {
         #region Commands
-        public ICommand SelectLandCommand { get { return new RelayCommand(SelectLand); } }
+        public ICommand SelectCountryCommand { get { return new RelayCommand(SelectCountry); } }
 
-        async void SelectLand()
+        async void SelectCountry()
         {
             MainViewModel.GetInstance().Country = new CountryViewModel(this);
-            await Application.Current.MainPage.Navigation.PushAsync(new CountryTabbedPage());
+            await App.Navigator.PushAsync(new CountryTabbedPage());
         }
         #endregion
     }

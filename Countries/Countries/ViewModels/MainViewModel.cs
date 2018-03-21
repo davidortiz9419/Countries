@@ -1,7 +1,9 @@
 ﻿namespace Countries.ViewModels
 {
+    using Helpers;
     using Models;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
 
     public class MainViewModel
     {
@@ -9,6 +11,8 @@
         public List<Country> CountryList { get; set; }
 
         public TokenResponse Token { get; set; }
+
+        public ObservableCollection<MenuItemViewModel> Menus { get; set; }
         #endregion
 
         #region ViewModels
@@ -24,6 +28,7 @@
         {
             instance = this;
             Login = new LoginViewModel();
+            LoadMenu();
         }
         #endregion
 
@@ -38,6 +43,33 @@
             }
 
             return instance;
+        }
+        #endregion
+
+        #region Methods
+        void LoadMenu()
+        {
+            Menus = new ObservableCollection<MenuItemViewModel>();
+            Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_settings",
+                PageName = "MyProfilePage",
+                Title = Languages.MyProfile,
+            });
+
+            Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_graph",
+                PageName = "StatisticsPage",
+                Title = Languages.Statistics,
+            });
+
+            Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_exit",
+                PageName = "LoginPage",
+                Title = Languages.Logout,
+            });
         }
         #endregion
     }

@@ -136,7 +136,8 @@
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Token = token;
             mainViewModel.Countries = new CountriesViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new CountriesPage());
+            Application.Current.MainPage = new MasterPage();
+            //await Application.Current.MainPage.Navigation.PushAsync(new CountriesPage());
 
             IsRunning = false;
             IsEnabled = true;
