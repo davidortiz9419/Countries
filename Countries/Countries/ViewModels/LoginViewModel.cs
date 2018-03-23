@@ -60,9 +60,6 @@
 
             IsToggled = true;
             IsEnabled = true;
-
-            Email = "davidortiz0919@outlook.com";
-            Password = "sys80.23";
         }
         #endregion
 
@@ -134,10 +131,16 @@
             }
 
             var mainViewModel = MainViewModel.GetInstance();
-            mainViewModel.Token = token;
+            mainViewModel.Token = token.AccessToken;
+            mainViewModel.TokenType = token.TokenType;
+            if (IsToggled)
+            {
+                Settings.Token = token.AccessToken;
+                Settings.TokenType = token.TokenType;
+            }
+            
             mainViewModel.Countries = new CountriesViewModel();
             Application.Current.MainPage = new MasterPage();
-            //await Application.Current.MainPage.Navigation.PushAsync(new CountriesPage());
 
             IsRunning = false;
             IsEnabled = true;
