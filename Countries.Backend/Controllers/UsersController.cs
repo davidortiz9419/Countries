@@ -16,7 +16,8 @@
         // GET: Users
         public async Task<ActionResult> Index()
         {
-            return View(await db.Users.ToListAsync());
+            var users = db.Users.Include(u => u.UserType);
+            return View(await users.ToListAsync());
         }
 
         // GET: Users/Details/5
@@ -34,13 +35,14 @@
             return View(user);
         }
 
-        //// GET: Users/Create
+        // GET: Users/Create
         //public ActionResult Create()
         //{
+        //    ViewBag.UserTypeId = new SelectList(db.UserTypes, "UserTypeId", "Name");
         //    return View();
         //}
 
-        //// POST: Users/Create
+        // POST: Users/Create
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public async Task<ActionResult> Create(UserView view)
@@ -54,8 +56,10 @@
         //        return RedirectToAction("Index");
         //    }
 
+        //    ViewBag.UserTypeId = new SelectList(db.UserTypes, "UserTypeId", "Name", view.UserTypeId);
         //    return View(view);
         //}
+
 
         private User ToUser(UserView view)
         {
@@ -67,9 +71,10 @@
                 LastName = view.LastName,
                 Telephone = view.Telephone,
                 UserId = view.UserId,
+                UserType = view.UserType,
+                UserTypeId = view.UserTypeId,
             };
         }
-
 
         // GET: Users/Edit/5
         //public async Task<ActionResult> Edit(int? id)
@@ -83,6 +88,7 @@
         //    {
         //        return HttpNotFound();
         //    }
+        //    ViewBag.UserTypeId = new SelectList(db.UserTypes, "UserTypeId", "Name", user.UserTypeId);
         //    return View(user);
         //}
 
@@ -91,7 +97,7 @@
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         //[HttpPost]
         //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> Edit([Bind(Include = "UserId,FirstName,LastName,Email,Telephone,ImagePath")] User user)
+        //public async Task<ActionResult> Edit([Bind(Include = "UserId,FirstName,LastName,Email,Telephone,UserTypeId,ImagePath")] User user)
         //{
         //    if (ModelState.IsValid)
         //    {
@@ -99,6 +105,7 @@
         //        await db.SaveChangesAsync();
         //        return RedirectToAction("Index");
         //    }
+        //    ViewBag.UserTypeId = new SelectList(db.UserTypes, "UserTypeId", "Name", user.UserTypeId);
         //    return View(user);
         //}
 

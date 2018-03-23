@@ -6,19 +6,25 @@
 
 <h2>Users</h2>
 
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
 <table class="table table-hover table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FullName)
+            User
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            Email
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Telephone)
+           Phone
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ImagePath)
+            Image
+        </th>
+        <th>
+            User Type
         </th>
         <th></th>
     </tr>
@@ -35,12 +41,16 @@
             @Html.DisplayFor(modelItem => item.Telephone)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImagePath)
+            @Html.DisplayFor(modelItem => item.ImageFullPath)
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { id=item.UserId })
+            @Html.DisplayFor(modelItem => item.UserType.Name)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |*@
+            @Html.ActionLink("Details", "Details", new { id = item.UserId })
+            @*@Html.ActionLink("Delete", "Delete", new { id = item.UserId })*@
         </td>
     </tr>
 }
-
 </table>
