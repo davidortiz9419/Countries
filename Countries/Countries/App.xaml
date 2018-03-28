@@ -10,9 +10,9 @@
             <infra:InstanceLocator x:Key="Locator"/>
 
             <!--Colors-->
-            <Color x:Key="colorPrimary">#9C27B0</Color>
-            <Color x:Key="colorPrimaryDark">#7B1FA2</Color>
-            <Color x:Key="colorAccent">#FF4081</Color>
+            <Color x:Key="colorPrimary">#2196F3</Color>
+            <Color x:Key="colorPrimaryDark">#1976D2</Color>
+            <Color x:Key="colorAccent">#448AFF</Color>
             <Color x:Key="colorPrimaryText">#212121</Color>
             <Color x:Key="colorSecondaryText">#757575</Color>
             <Color x:Key="colorTextIcons">#FFFFFF</Color>

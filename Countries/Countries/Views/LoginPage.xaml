@@ -19,7 +19,7 @@
             BindingContext="{Binding Login}">
             <StackLayout>
                 <Image
-                    Source="travel_night"
+                    Source="countries"
                     WidthRequest="180">
                 </Image>
                 <Grid
@@ -61,7 +61,7 @@
                 <Label
                     HorizontalOptions="CenterAndExpand"
                     Text="{i18n:Translate Forgot}"
-                    TextColor="#2196F3">
+                    TextColor="{StaticResource colorPrimary}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer
                             Command="{Binding PasswordRecoveryCommand}">
@@ -74,7 +74,6 @@
                 <StackLayout
                     Margin="10,0">
                     <Button
-                        BackgroundColor="{StaticResource colorPrimaryDark}"
                         BorderRadius="23"
                         Command="{Binding LoginCommand}"
                         FontAttributes="Bold"
@@ -82,10 +81,10 @@
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                         Text="{i18n:Translate Login}"
-                        TextColor="{StaticResource colorTextIcons}">
+                        TextColor="{StaticResource colorPrimaryText}">
                     </Button>
                     <Button
-                        BackgroundColor="{StaticResource colorAccent}"
+                        BackgroundColor="{StaticResource colorPrimaryDark}"
                         BorderRadius="23"
                         Command="{Binding RegisterCommand}"
                         FontAttributes="Bold"

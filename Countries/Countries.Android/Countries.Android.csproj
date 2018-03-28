@@ -122,12 +122,6 @@
     <AndroidResource Include="Resources\drawable\twitter.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\travel_night.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\bg_splash.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_exit.png" />
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +139,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\ic_settings.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\countries.png" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\ic_exit.png" />
   </ItemGroup>
