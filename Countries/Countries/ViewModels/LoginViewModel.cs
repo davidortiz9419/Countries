@@ -3,6 +3,7 @@
     using GalaSoft.MvvmLight.Command;
     using Helpers;
     using Services;
+    using System;
     using System.Windows.Input;
     using Views;
     using Xamarin.Forms;
@@ -101,9 +102,9 @@
                     Languages.Accept);
                 return;
             }
-
+            var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
             var token = await apiService.GetToken(
-                "http://countriesapi.azurewebsites.net",
+                apiSecurity,
                 Email,
                 Password);
 
@@ -147,6 +148,14 @@
 
             Email = string.Empty;
             Password = string.Empty;
+        }
+
+        public ICommand RegisterCommand { get { return new RelayCommand(Register); } }
+
+        async void Register()
+        {
+            MainViewModel.GetInstance().Register = new RegisterViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
         #endregion
     }

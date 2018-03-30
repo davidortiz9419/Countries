@@ -9,6 +9,10 @@
             <!--Locator-->
             <infra:InstanceLocator x:Key="Locator"/>
 
+            <!-- Parameters -->
+            <x:String x:Key="APICountries">http://restcountries.eu</x:String>
+            <x:String x:Key="APISecurity">http://countriesapi.azurewebsites.net</x:String>
+
             <!--Colors-->
             <Color x:Key="colorPrimary">#2196F3</Color>
             <Color x:Key="colorPrimaryDark">#1976D2</Color>

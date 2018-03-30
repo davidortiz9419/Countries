@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Countries.Controls;assembly:Countries"
+    xmlns:images="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" 
+    xmlns:i18n="clr-namespace:Countries.Helpers"
+    x:Class="Countries.Views.RegisterPage"
+    Title="{i18n:Translate RegisterTitle}"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    BackgroundColor="{StaticResource colorBackground}">
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness"
+            iOS="20,30,20,10"
+            Android="8"/>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Register}">
+            <StackLayout>
+                <images:CircleImage
+                    Aspect="AspectFill"
+                    HeightRequest="150"
+                    Source="{Binding ImageSource}">
+                    <images:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeImageCommand}"/>
+                    </images:CircleImage.GestureRecognizers>
+                </images:CircleImage>
+                <Grid
+                    Margin="10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <controls:MaterialEntry
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="{i18n:Translate FirstName}"
+                        Text="{Binding FirstName, Mode=TwoWay}">
+                    </controls:MaterialEntry>
+                    <controls:MaterialEntry
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="{i18n:Translate LastName}"
+                        Text="{Binding LastName, Mode=TwoWay}">
+                    </controls:MaterialEntry>
+                    <controls:MaterialEntry
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        HorizontalOptions="FillAndExpand"
+                        Keyboard="Telephone"
+                        Placeholder="{i18n:Translate Phone}"
+                        Text="{Binding Telephone, Mode=TwoWay}">
+                    </controls:MaterialEntry>
+                    <controls:MaterialEntry
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        HorizontalOptions="FillAndExpand"
+                        Keyboard="Email"
+                        Placeholder="{i18n:Translate Email}"
+                        Text="{Binding Email, Mode=TwoWay}">
+                    </controls:MaterialEntry>
+                    <controls:MaterialEntry
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        HorizontalOptions="FillAndExpand"
+                        IsPassword="True"
+                        Placeholder="{i18n:Translate Password}"
+                        Text="{Binding Password, Mode=TwoWay}">
+                    </controls:MaterialEntry>
+                    <controls:MaterialEntry
+                        Grid.Column="0"
+                        Grid.Row="5"
+                        HorizontalOptions="FillAndExpand"
+                        IsPassword="True"
+                        Placeholder="{i18n:Translate Confirm}"
+                        Text="{Binding Confirm, Mode=TwoWay}">
+                    </controls:MaterialEntry>
+                </Grid>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}">
+                </ActivityIndicator>
+                <Button
+                    BackgroundColor="{StaticResource colorPrimaryDark}"
+                    BorderRadius="23"
+                    Command="{Binding RegisterCommand}"
+                    FontAttributes="Bold"
+                    HeightRequest="46"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    Margin="50,0"
+                    Text="{i18n:Translate Register}"
+                    TextColor="{StaticResource colorTextIcons}">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

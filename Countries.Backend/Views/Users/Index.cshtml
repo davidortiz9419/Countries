@@ -29,7 +29,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model.OrderBy(u => u.FirstName).ThenBy(u => u.LastName)) {
+  @foreach (var item in Model.OrderBy(u => u.FirstName).ThenBy(u => u.LastName))
+   {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.FullName)
@@ -41,7 +42,10 @@
             @Html.DisplayFor(modelItem => item.Telephone)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageFullPath)
+            @if (!string.IsNullOrEmpty(item.ImagePath))
+            {
+                <img src="@Url.Content(item.ImageFullPath)" alt="Image" style="width:150px;height:150px;max-width:100%;height:auto;"/>
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UserType.Name)
@@ -52,5 +56,5 @@
             @*@Html.ActionLink("Delete", "Delete", new { id = item.UserId })*@
         </td>
     </tr>
-}
+   }
 </table>

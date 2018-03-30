@@ -7,5 +7,9 @@
         public DataContext() : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<Countries.Domain.User> Users { get; set; }
+
+        public System.Data.Entity.DbSet<Countries.Domain.UserType> UserTypes { get; set; }
     }
 }

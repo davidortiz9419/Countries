@@ -23,6 +23,8 @@
         public CountriesViewModel Countries { get; set; }
 
         public LoginViewModel Login { get; set; }
+
+        public RegisterViewModel Register { get; set; }
         #endregion
 
         #region Constructors

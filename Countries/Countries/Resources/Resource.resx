@@ -330,4 +330,10 @@
   <data name="LoginTitle" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="SourceImageQuestion" xml:space="preserve">
+    <value>Where do you want to take the image?</value>
+  </data>
 </root>

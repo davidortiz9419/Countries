@@ -40,6 +40,12 @@
         [Display(Name = "Imagen")]
         public string ImagePath { get; set; }
 
+        [NotMapped]
+        public byte[] ImageArray { get; set; }
+
+        [NotMapped]
+        public string Password { get; set; }
+
         [Display(Name = "Imagen")]
         public string ImageFullPath
         {

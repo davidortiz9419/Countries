@@ -73,6 +73,11 @@
             get { return Resource.Confirm; }
         }
 
+        public static string Confirmation
+        {
+            get { return Resource.Confirmation; }
+        }
+
         public static string ConfirmValidation
         {
             get { return Resource.ConfirmValidation; }
@@ -336,6 +341,11 @@
         public static string SomethingWrong
         {
             get { return Resource.SomethingWrong; }
+        }
+
+        public static string SourceImageQuestion
+        {
+            get { return Resource.SourceImageQuestion; }
         }
 
         public static string Spanish

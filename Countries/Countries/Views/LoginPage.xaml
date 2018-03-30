@@ -72,7 +72,7 @@
                     IsRunning="{Binding IsRunning, Mode=TwoWay}">
                 </ActivityIndicator>
                 <StackLayout
-                    Margin="10,0">
+                    Margin="50,0">
                     <Button
                         BorderRadius="23"
                         Command="{Binding LoginCommand}"

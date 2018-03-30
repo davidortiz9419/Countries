@@ -169,6 +169,15 @@ namespace Countries.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirmation.
+        /// </summary>
+        public static string Confirmation {
+            get {
+                return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must enter a confirm password..
         /// </summary>
         public static string ConfirmValidation {
@@ -651,6 +660,15 @@ namespace Countries.Resources {
         public static string SomethingWrong {
             get {
                 return ResourceManager.GetString("SomethingWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Where do you want to take the image?.
+        /// </summary>
+        public static string SourceImageQuestion {
+            get {
+                return ResourceManager.GetString("SourceImageQuestion", resourceCulture);
             }
         }
         
