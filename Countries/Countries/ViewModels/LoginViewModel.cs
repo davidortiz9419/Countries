@@ -3,7 +3,6 @@
     using GalaSoft.MvvmLight.Command;
     using Helpers;
     using Services;
-    using System;
     using System.Windows.Input;
     using Views;
     using Xamarin.Forms;
@@ -12,6 +11,7 @@
     {
         #region Services
         ApiService apiService;
+        DataService dataService;
         #endregion
 
         #region Attributes
@@ -58,6 +58,7 @@
         public LoginViewModel()
         {
             apiService = new ApiService();
+            dataService = new DataService();
 
             IsToggled = true;
             IsEnabled = true;
@@ -131,15 +132,33 @@
                 return;
             }
 
+            var user = await apiService.GetUserByEmail(
+                apiSecurity,
+                "/api",
+                "/Users/GetUserByEmail",
+                token.TokenType,
+                token.AccessToken,
+                Email);
+
+            var userLocal = Converter.ToUserLocal(user);
+            userLocal.Password = Password;
+
             var mainViewModel = MainViewModel.GetInstance();
-            mainViewModel.Token = token.AccessToken;
-            mainViewModel.TokenType = token.TokenType;
+            mainViewModel.Token = token;
+            mainViewModel.User = userLocal;
+
             if (IsToggled)
             {
-                Settings.Token = token.AccessToken;
-                Settings.TokenType = token.TokenType;
+                Settings.IsRemembered = "true";
             }
-            
+            else
+            {
+                Settings.IsRemembered = "false";
+            }
+
+            dataService.DeleteAllAndInsert(userLocal);
+            dataService.DeleteAllAndInsert(token);
+
             mainViewModel.Countries = new CountriesViewModel();
             Application.Current.MainPage = new MasterPage();
 

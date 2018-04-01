@@ -1,6 +1,9 @@
 ﻿namespace Countries
 {
     using Helpers;
+    using Models;
+    using Services;
+    using System;
     using ViewModels;
     using Views;
     using Xamarin.Forms;
@@ -17,17 +20,28 @@
         {
             InitializeComponent();
 
-            if (string.IsNullOrEmpty(Settings.Token))
+            if (Settings.IsRemembered == "true")
             {
-                MainPage = new NavigationPage(new LoginPage());
+                var dataService = new DataService();
+                var token = dataService.First<TokenResponse>(false);
+
+                if (token != null && token.Expires > DateTime.Now)
+                {
+                    var user = dataService.First<UserLocal>(false);
+                    var mainViewModel = MainViewModel.GetInstance();
+                    mainViewModel.Token = token;
+                    mainViewModel.User = user;
+                    mainViewModel.Countries = new CountriesViewModel();
+                    Application.Current.MainPage = new MasterPage();
+                }
+                else
+                {
+                    this.MainPage = new NavigationPage(new LoginPage());
+                }
             }
             else
             {
-                var mainViewModel = MainViewModel.GetInstance();
-                mainViewModel.Token = Settings.Token;
-                mainViewModel.TokenType = Settings.TokenType;
-                mainViewModel.Countries = new CountriesViewModel();
-                MainPage = new MasterPage();
+                this.MainPage = new NavigationPage(new LoginPage());
             }
         }
         #endregion
