@@ -336,4 +336,10 @@
   <data name="SourceImageQuestion" xml:space="preserve">
     <value>Où voulez-vous prendre image ?</value>
   </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>Le mot de passe actuel est incorrect</value>
+  </data>
+  <data name="ErrorChangingPassword" xml:space="preserve">
+    <value>Le mot de passe ne peut pas être changé. Réessayez plus tard.</value>
+  </data>
 </root>

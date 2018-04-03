@@ -153,6 +153,11 @@
             get { return Resource.Error; }
         }
 
+        public static string ErrorChangingPassword
+        {
+            get { return Resource.ErrorChangingPassword; }
+        }
+
         public static string FirstName
         {
             get { return Resource.FirstName; }
@@ -271,6 +276,11 @@
         public static string Password
         {
             get { return Resource.Password; }
+        }
+
+        public static string PasswordError
+        {
+            get { return Resource.PasswordError; }
         }
 
         public static string PasswordValidation

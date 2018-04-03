@@ -45,7 +45,7 @@
         {
             get
             {
-                return string.Format("{0} {1}", this.FirstName, this.LastName);
+                return string.Format("{0} {1}", FirstName, LastName);
             }
         }
 

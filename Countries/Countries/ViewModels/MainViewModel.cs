@@ -28,11 +28,15 @@
         #endregion
 
         #region ViewModels
+        public ChangePasswordViewModel ChangePassword { get; set; }
+
         public CountryViewModel Country { get; set; }
 
         public CountriesViewModel Countries { get; set; }
 
         public LoginViewModel Login { get; set; }
+
+        public MyProfileViewModel MyProfile { get; set; }
 
         public RegisterViewModel Register { get; set; }
         #endregion
