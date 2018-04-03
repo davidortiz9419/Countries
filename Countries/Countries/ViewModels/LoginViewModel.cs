@@ -3,6 +3,7 @@
     using GalaSoft.MvvmLight.Command;
     using Helpers;
     using Services;
+    using System;
     using System.Windows.Input;
     using Views;
     using Xamarin.Forms;
@@ -167,6 +168,13 @@
 
             Email = string.Empty;
             Password = string.Empty;
+        }
+
+        public ICommand LoginFacebookCommand { get { return new RelayCommand(LoginFacebook); } }
+
+        async void LoginFacebook()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new LoginFacebookPage());
         }
 
         public ICommand RegisterCommand { get { return new RelayCommand(Register); } }
